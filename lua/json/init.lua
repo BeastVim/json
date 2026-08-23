@@ -20,8 +20,10 @@ function M.setup()
 		return
 	end
 
+	-- jsonc buffers are parsed with the "json" grammar (there is no separate
+	-- "jsonc" parser).
+	vim.treesitter.language.register("json", "jsonc")
 	Treesitter.ensure_parser("json")
-	Treesitter.ensure_parser("jsonc")
 
 	-- conform.nvim's `formatters_by_ft` is a plain mutable table it exposes
 	-- for exactly this -- no BeastVim wrapper needed. `require("conform")`
