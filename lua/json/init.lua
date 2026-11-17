@@ -57,14 +57,14 @@ function M.setup()
 				},
 			},
 			keys = {
-				{ "K", vim.lsp.buf.hover, desc = "Hover", cond = "textDocument/hover" },
-				{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename", cond = "textDocument/rename" },
+				{ "K", vim.lsp.buf.hover, desc = "Hover", method = "textDocument/hover" },
+				{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename", method = "textDocument/rename" },
 				{
 					"<leader>la",
 					vim.lsp.buf.code_action,
 					mode = { "n", "v" },
 					desc = "Code action",
-					cond = "textDocument/codeAction",
+					method = "textDocument/codeAction",
 				},
 			},
 		})
